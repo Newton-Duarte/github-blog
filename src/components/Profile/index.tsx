@@ -2,37 +2,42 @@ import githubImg from '../../assets/github.svg'
 import companyImg from '../../assets/company.svg'
 import followersImg from '../../assets/followers.svg'
 import linkImg from '../../assets/link.svg'
+import { Text } from '../Text'
+import { GithubUser } from '../../hooks/useFetchGithubUser'
 
 import * as S from './styles'
-import { Link } from '../Link'
-import { Text } from '../Text'
 
-export function Profile() {
+type ProfileProps = {
+  user: GithubUser
+}
+
+export function Profile({ user }: ProfileProps) {
   return (
     <S.Container>
-      <S.Avatar src="https://github.com/newton-duarte.png" />
+      <S.Avatar src={user.avatar_url} />
       <S.Content>
         <S.Header>
-          <h1>Newton Duarte</h1>
-          <Link>
+          <h1>{user.name}</h1>
+          <a
+            className="link"
+            href={user.html_url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             Github
             <img src={linkImg} />
-          </Link>
+          </a>
         </S.Header>
-        <Text>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </Text>
+        <Text>{user.bio}</Text>
         <S.Information>
           <div>
-            <img src={githubImg} /> newton_duarte
+            <img src={githubImg} /> {user.login}
           </div>
           <div>
-            <img src={companyImg} /> Rocketseat
+            <img src={companyImg} /> {user.company}
           </div>
           <div>
-            <img src={followersImg} /> 32 seguidores
+            <img src={followersImg} /> {user.followers} seguidores
           </div>
         </S.Information>
       </S.Content>
