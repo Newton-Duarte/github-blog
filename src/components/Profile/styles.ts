@@ -1,12 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 864px;
-  margin: 0 auto;
   background-color: ${(props) => props.theme.profile};
   border-radius: 10px;
   padding: 2rem 2.5rem;
-  margin-top: -6rem;
+  margin-top: -10rem;
   display: flex;
   gap: 2rem;
 `
