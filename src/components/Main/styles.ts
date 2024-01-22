@@ -5,4 +5,6 @@ export const Main = styled.main`
   max-width: 960px;
   margin: 4rem auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
 `
