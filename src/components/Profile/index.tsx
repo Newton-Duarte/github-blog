@@ -5,6 +5,7 @@ import linkImg from '../../assets/link.svg'
 
 import * as S from './styles'
 import { Link } from '../Link'
+import { Text } from '../Text'
 
 export function Profile() {
   return (
@@ -18,11 +19,11 @@ export function Profile() {
             <img src={linkImg} />
           </Link>
         </S.Header>
-        <S.Description>
+        <Text>
           Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
           viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
           pulvinar vel mass.
-        </S.Description>
+        </Text>
         <S.Information>
           <div>
             <img src={githubImg} /> newton_duarte
