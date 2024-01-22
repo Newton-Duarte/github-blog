@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
 
   :focus {
     outline: 0;
-    box-shadow: inset 0 0 0 2px ${(props) => props.theme.blue};
   }
 
   body {
@@ -20,5 +19,24 @@ export const GlobalStyle = createGlobalStyle`
 
   body, input, textarea, button {
     font: 400 1rem Nunito, sans-serif;
-  } 
+  }
+
+  a {
+    text-decoration: none;
+
+    &.link {
+      color: ${(props) => props.theme.blue};
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 12px;
+      text-decoration: none;
+
+      display: flex;
+      gap: 0.5rem;
+
+      &:not(:disabled):hover {
+        border-bottom: 1px solid ${(props) => props.theme.blue};
+      }
+    }
+  }
 `
