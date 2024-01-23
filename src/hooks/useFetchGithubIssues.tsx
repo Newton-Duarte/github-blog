@@ -4,9 +4,11 @@ import { GithubUser } from './useFetchGithubUser'
 
 export type GithubIssue = {
   id: number
+  number: number
   title: string
   body: string
   html_url: string
+  comments: number
   updated_at: string
   user: GithubUser
 }
