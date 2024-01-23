@@ -5,12 +5,12 @@ import { useFetchGithubUser } from '../hooks/useFetchGithubUser'
 
 export function Home() {
   const { user } = useFetchGithubUser()
-  const { issues } = useFetchGithubIssues()
+  const { issues, updateSearch } = useFetchGithubIssues()
 
   return (
     <>
       <Profile user={user} />
-      <Posts posts={issues} />
+      <Posts posts={issues} onSearch={updateSearch} />
     </>
   )
 }

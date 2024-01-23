@@ -14,12 +14,22 @@ export type GithubIssue = {
 }
 
 export function useFetchGithubIssues() {
+  const [search, setSearch] = useState('')
   const [issues, setIssues] = useState<GithubIssue[]>([])
 
   async function getGithubIssue() {
+    const query = search
+      ? encodeURI(`${search} repo:newton-duarte/github-blog`)
+      : ''
+
     try {
       const response = await githubApi.get(
         '/repos/newton-duarte/github-blog/issues',
+        {
+          params: {
+            q: query,
+          },
+        },
       )
       setIssues(response.data)
     } catch (error) {
@@ -27,11 +37,16 @@ export function useFetchGithubIssues() {
     }
   }
 
+  function updateSearch(term: string) {
+    setSearch(term)
+  }
+
   useEffect(() => {
     getGithubIssue()
-  }, [])
+  }, [search])
 
   return {
     issues,
+    updateSearch,
   }
 }
