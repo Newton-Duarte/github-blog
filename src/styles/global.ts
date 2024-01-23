@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: bold;
       font-size: 12px;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
 
       display: flex;
       gap: 0.5rem;
