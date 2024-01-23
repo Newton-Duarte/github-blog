@@ -14,4 +14,8 @@ export const Input = styled.input<InputProps>`
   &::placeholder {
     color: ${(props) => props.theme.label};
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `
