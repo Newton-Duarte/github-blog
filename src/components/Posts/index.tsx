@@ -3,6 +3,7 @@ import { Card } from '../Card'
 import { Input } from '../Input'
 import * as S from './styles'
 import { GithubIssue } from '../../hooks/useFetchGithubIssues'
+import { formatDistance } from 'date-fns'
 
 type PostsProps = {
   posts: GithubIssue[]
@@ -22,14 +23,10 @@ export function Posts({ posts }: PostsProps) {
       </S.SearchForm>
       <S.Posts>
         {posts?.map((post) => (
-          <NavLink
-            key={post.id}
-            to={`/post/${post.html_url}`}
-            title={post.title}
-          >
+          <NavLink key={post.id} to={`/post/${post.id}`} title={post.title}>
             <Card
               title={post.title}
-              date={post.updated_at}
+              date={formatDistance(new Date(post.updated_at), new Date())}
               description={post.body}
             />
           </NavLink>
