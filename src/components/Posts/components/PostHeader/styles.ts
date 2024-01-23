@@ -1,10 +1,11 @@
 import styled from 'styled-components'
+import { MOBILE_SIZE } from '../../../utils/media-query'
 
 export const Container = styled.div`
   background-color: ${(props) => props.theme.profile};
   border-radius: 10px;
   padding: 2rem 2.5rem;
-  margin-top: -10rem;
+  margin-top: -8rem;
 `
 
 export const Content = styled.div`
@@ -12,12 +13,12 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-`
 
-export const Avatar = styled.img`
-  width: 148px;
-  height: 148px;
-  border-radius: 8px;
+  @media ${MOBILE_SIZE} {
+    h2 {
+      text-align: center;
+    }
+  }
 `
 
 export const Header = styled.div`
@@ -32,10 +33,6 @@ export const Header = styled.div`
   }
 `
 
-export const Description = styled.p`
-  color: ${(props) => props.theme.text};
-`
-
 export const Information = styled.div`
   display: flex;
   align-items: center;
@@ -46,5 +43,9 @@ export const Information = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  @media ${MOBILE_SIZE} {
+    flex-direction: column;
   }
 `
