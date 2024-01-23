@@ -7,9 +7,14 @@ export const Container = styled.div`
   border-radius: 10px;
   background-color: ${(props) => props.theme.post};
   cursor: pointer;
+  border: 1px solid transparent;
 
   p {
     color: ${(props) => props.theme.text};
+  }
+
+  &:hover {
+    border-color: ${(props) => props.theme.blue};
   }
 `
 export const Title = styled.div`
