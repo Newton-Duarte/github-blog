@@ -6,8 +6,14 @@ import chevronLeftImg from '../../../../assets/chevron-left.svg'
 
 import * as S from './styles'
 import { Link } from '../../../Link'
+import { GithubIssue } from '../../../../hooks/useFetchGithubIssues'
+import { formatDistance } from 'date-fns'
 
-export function PostHeader() {
+type PostHeaderProps = {
+  issue: GithubIssue
+}
+
+export function PostHeader({ issue }: PostHeaderProps) {
   return (
     <S.Container>
       <S.Content>
@@ -18,7 +24,7 @@ export function PostHeader() {
           </Link>
           <a
             className="link"
-            href="https://github.com"
+            href={issue?.html_url}
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -26,16 +32,20 @@ export function PostHeader() {
             <img src={linkImg} />
           </a>
         </S.Header>
-        <h2>JavaScript data types and data structures</h2>
+        <h2>{issue?.title}</h2>
         <S.Information>
           <div>
-            <img src={githubImg} /> newton_duarte
+            <img src={githubImg} /> {issue?.user?.login}
           </div>
           <div>
-            <img src={calendarImg} /> Há 1 dia
+            <img src={calendarImg} />{' '}
+            {issue
+              ? formatDistance(new Date(issue?.updated_at), new Date())
+              : ''}
           </div>
           <div>
-            <img src={commentImg} /> 32 seguidores
+            <img src={commentImg} /> {issue?.comments}{' '}
+            {issue?.comments > 1 ? 'comentários' : 'comentário'}
           </div>
         </S.Information>
       </S.Content>
