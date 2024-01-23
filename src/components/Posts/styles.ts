@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MOBILE_SIZE } from '../utils/media-query'
 
 export const Container = styled.div``
 
@@ -32,4 +33,8 @@ export const Posts = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2.5rem;
+
+  @media ${MOBILE_SIZE} {
+    grid-template-columns: 1fr;
+  }
 `
