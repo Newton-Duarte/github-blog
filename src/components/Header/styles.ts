@@ -9,9 +9,9 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(${effect1}), url(${effect2});
-  background-position: left, right;
-  background-repeat: no-repeat, no-repeat;
+  background:
+    url(${effect1}) left center no-repeat,
+    url(${effect2}) right center no-repeat;
 
   &::before {
     content: '';
