@@ -2,7 +2,6 @@ import githubImg from '../../assets/github.svg'
 import companyImg from '../../assets/company.svg'
 import followersImg from '../../assets/followers.svg'
 import linkImg from '../../assets/link.svg'
-import { Text } from '../Text'
 import { GithubUser } from '../../hooks/useFetchGithubUser'
 
 import * as S from './styles'
@@ -28,7 +27,7 @@ export function Profile({ user }: ProfileProps) {
             <img src={linkImg} />
           </a>
         </S.Header>
-        <Text>{user.bio}</Text>
+        <S.Description>{user.bio}</S.Description>
         <S.Information>
           <div>
             <img src={githubImg} /> {user.login}
