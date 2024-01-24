@@ -1,7 +1,7 @@
 import logo from '../../assets/logo.svg'
 
-import effect1 from './effect1.svg'
-import effect2 from './effect2.svg'
+import effect1 from '../../assets/effect1.svg'
+import effect2 from '../../assets/effect2.svg'
 
 import * as S from './styles'
 
