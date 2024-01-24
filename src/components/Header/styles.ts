@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-import effect1 from '../../assets/effect1.svg'
-import effect2 from '../../assets/effect2.svg'
+import effect1 from './effect1.svg'
+import effect2 from './effect2.svg'
 
 export const Container = styled.header`
   position: relative;
+  width: 100%;
   height: 296px;
   display: flex;
   align-items: center;
