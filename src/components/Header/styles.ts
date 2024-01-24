@@ -1,11 +1,9 @@
 import styled from 'styled-components'
 
-type ContainerProps = {
-  effect1: string
-  effect2: string
-}
+import effect1 from '../../assets/effect1.png'
+import effect2 from '../../assets/effect2.png'
 
-export const Container = styled.header<ContainerProps>`
+export const Container = styled.header`
   position: relative;
   width: 100%;
   height: 296px;
@@ -13,8 +11,8 @@ export const Container = styled.header<ContainerProps>`
   align-items: center;
   justify-content: center;
   background:
-    url(${(props) => props.effect1}) left center no-repeat,
-    url(${(props) => props.effect2}) right center no-repeat;
+    url(${effect1}) left center no-repeat,
+    url(${effect2}) right center no-repeat;
 
   &::before {
     content: '';
