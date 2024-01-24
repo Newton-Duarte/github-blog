@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
-import effect1 from './effect1.svg'
-import effect2 from './effect2.svg'
+type ContainerProps = {
+  effect1: string
+  effect2: string
+}
 
-export const Container = styled.header`
+export const Container = styled.header<ContainerProps>`
   position: relative;
   width: 100%;
   height: 296px;
@@ -11,8 +13,8 @@ export const Container = styled.header`
   align-items: center;
   justify-content: center;
   background:
-    url(${effect1}) left center no-repeat,
-    url(${effect2}) right center no-repeat;
+    url(${(props) => props.effect1}) left center no-repeat,
+    url(${(props) => props.effect2}) right center no-repeat;
 
   &::before {
     content: '';
