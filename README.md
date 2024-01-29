@@ -30,8 +30,6 @@ To set up the GitHub Blog App, follow these steps:
     git clone https://github.com/Newton-Duarte/github-blog.git
     ```
 
-<!-- 2. **Configure GitHub API Access**: Obtain a GitHub personal access token with the required permissions and update the configuration in the app. -->
-
 2. **Install Dependencies**: Install the necessary dependencies for the app.
 
     ```bash
